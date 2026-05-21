@@ -223,7 +223,7 @@ input[type="email"]::placeholder { color: rgba(255,255,255,0.4); }
 
     <form action="https://formsubmit.co/lopezvillanj@gmail.com" method="POST" style="width:100%;max-width:420px;">
       <input type="hidden" name="_subject" value="Nueva solicitud lista de espera brainfi"/>
-      <input type="hidden" name="_next" value="https://brainfi.io"/>
+      <input type="hidden" name="_next" value="https://brainfi.io?apuntado=1"/>
       <input type="hidden" name="_captcha" value="false"/>
       <label class="form-label">Email *</label>
       <input type="email" name="email" placeholder="tu@empresa.com" autocomplete="email" required style="width:100%;"/>
@@ -242,5 +242,14 @@ input[type="email"]::placeholder { color: rgba(255,255,255,0.4); }
 
 
 
+<script>
+if (new URLSearchParams(window.location.search).get('apuntado') === '1') {
+  const msg = document.createElement('div')
+  msg.style.cssText = 'position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#fff;color:#4361EE;font-size:14px;font-weight:600;padding:14px 28px;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.15);z-index:100;'
+  msg.textContent = '✓ Apuntado. Te avisamos cuando abramos.'
+  document.body.appendChild(msg)
+  setTimeout(() => msg.remove(), 5000)
+}
+</script>
 </body>
 </html>
