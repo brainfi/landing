@@ -221,12 +221,15 @@ input[type="email"]::placeholder { color: rgba(255,255,255,0.4); }
     <h1>Muy<br>pronto.</h1>
     <p class="desc">Únete a la lista de espera para ser el primero en tener acceso anticipado a la plataforma.</p>
 
-    <label class="form-label">Email *</label>
-    <input type="email" id="email" placeholder="tu@empresa.com" autocomplete="email"/>
-    <div class="form-row">
-      <button class="btn-signup" onclick="handleSubmit()" style="width:100%;max-width:420px;text-align:center;">Apuntarme</button>
-    </div>
-    <div class="success" id="success-msg">✓ Apuntado. Te avisamos en cuanto abramos.</div>
+    <form action="https://formsubmit.co/lopezvillanj@gmail.com" method="POST" style="width:100%;max-width:420px;">
+      <input type="hidden" name="_subject" value="Nueva solicitud lista de espera brainfi"/>
+      <input type="hidden" name="_next" value="https://brainfi.io"/>
+      <input type="hidden" name="_captcha" value="false"/>
+      <label class="form-label">Email *</label>
+      <input type="email" name="email" placeholder="tu@empresa.com" autocomplete="email" required style="width:100%;"/>
+      <div style="height:20px;"></div>
+      <button type="submit" class="btn-signup" style="width:100%;text-align:center;">Apuntarme</button>
+    </form>
   </div>
 
   <!-- Footer -->
