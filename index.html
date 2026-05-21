@@ -237,38 +237,7 @@ input[type="email"]::placeholder { color: rgba(255,255,255,0.4); }
   </div>
 </div>
 
-<script>
-function handleSubmit() {
-  const email = document.getElementById('email').value.trim()
-  if (!email || !email.includes('@')) {
-    document.getElementById('email').style.borderColor = 'rgba(255,100,100,0.6)'
-    document.getElementById('email').focus()
-    return
-  }
-  document.getElementById('email').style.borderColor = 'rgba(255,255,255,0.2)'
-  const success = document.getElementById('success-msg')
-  success.style.display = 'block'
-  const btn = document.querySelector('.btn-signup')
-  btn.disabled = true
-  btn.style.background = 'rgba(255,255,255,0.3)'
-  btn.style.color = 'rgba(255,255,255,0.6)'
-  btn.textContent = '✓ Apuntado'
-  document.getElementById('email').disabled = true
 
-  fetch('https://formsubmit.co/ajax/a8f3c2d1e4b7691025f8a3c6d9e2b104', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify({
-      email,
-      newsletter: document.getElementById('newsletter').checked,
-      _subject: 'Lista de espera brainfi.io'
-    })
-  }).catch(() => {})
-}
-document.getElementById('email').addEventListener('keydown', e => {
-  if (e.key === 'Enter') handleSubmit()
-})
-</script>
 
 </body>
 </html>
